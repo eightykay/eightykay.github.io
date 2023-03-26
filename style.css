@@ -1,0 +1,62 @@
+body {
+    /*font-family: Arial, Verdana, sans-serif;*/
+    font-family:  verdana, sans-serif;
+    margin: 1em 1.2em 1em 1.2em;
+    max-width: 900px;
+    background: floralwhite;
+}
+
+h1 {
+    border-bottom: 2px solid silver;
+    line-height: 1em;
+    font-size:xx-large;
+    margin-bottom: .31em;
+}
+h2 {
+    font-size:x-large;
+    margin-bottom: 1px;
+    color: DarkOliveGreen;
+}
+h3 {
+    font-size:large;
+    margin-bottom: 1px;
+    color: DarkCyan;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+a:visited{
+    color: #0000ff;
+}
+
+.navbar {
+  background: #f0f0f0;
+  padding: .1em;
+  margin-bottom:2em;
+}
+
+#profile_pic {
+ float:right;
+ margin:0em 0em 1em 1em;
+ }
+
+.footer {
+    font-size: .8em;
+}
+      table {
+          border-collapse: collapse;
+        }
+
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #D6EEEE;
+        }
