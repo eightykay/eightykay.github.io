@@ -1,5 +1,8 @@
-data = ['20230306', '20230313', '20230320', '20230327',
-        '20230403']
+import glob
+
+data = glob.glob('dat/*')
+#data = ['20230306', '20230313', '20230320', '20230327',
+        #'20230403']
 data = sorted(data)[::-1]
 
 with open('index.html', 'w') as fid:
@@ -11,7 +14,7 @@ with open('index.html', 'w') as fid:
     fid.write('</head>\n')
     fid.write('<body>\n')
     for i0 in data:
-        with open('dat/' + i0, 'r') as fid1:
+        with open(i0, 'r') as fid1:
             x = fid1.read()
         fid.write(x)
         fid.write('<hr class="solid">\n')
