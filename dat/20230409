@@ -1,0 +1,41 @@
+<h2> April 9, 2023 </h2>
+<h3> Liverpool vs Arsenal </h3>
+
+<p> Arsenal in a close race for the title. </p>
+
+<p> The table heading into this game: </p>
+
+<table>
+  <tr>
+    <th> </th>
+    <th> W </th>
+    <th> D </th>
+    <th> L </th>
+    <th> Pts </th>
+  </tr>
+  <tr>
+    <th> Arsenal </th>
+    <th> 23 </th>
+    <th> 3 </th>
+    <th> 3 </th>
+    <th> 72 </th>
+  </tr>
+  <tr>
+    <th> Manchester City </th>
+    <th> 20 </th>
+    <th> 4 </th>
+    <th> 4 </th>
+    <th> 64 </th>
+  </tr>
+  <tr>
+    <th> Newcastle United </th>
+    <th> 14 </th>
+    <th> 11 </th>
+    <th> 3 </th>
+    <th> 53 </th>
+  </tr>
+</table>
+
+<p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1wWZO0PIbR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
