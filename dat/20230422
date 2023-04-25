@@ -1,0 +1,41 @@
+<h2> April 22, 2023 </h2>
+<h3> Mainz vs Bayern Munich </h3>
+
+<p> Bayern at the top of the league with Dortmund close behind. </p>
+
+<p> The table heading into this game: </p>
+
+<table>
+  <tr>
+    <th> </th>
+    <th> W </th>
+    <th> D </th>
+    <th> L </th>
+    <th> Pts </th>
+  </tr>
+  <tr>
+    <th> Bayern Munich </th>
+    <th> 17 </th>
+    <th> 8 </th>
+    <th> 3 </th>
+    <th> 59 </th>
+  </tr>
+  <tr>
+    <th> Dortmund </th>
+    <th> 18 </th>
+    <th> 3 </th>
+    <th> 7 </th>
+    <th> 57 </th>
+  </tr>
+  <tr>
+    <th> Union Berlin </th>
+    <th> 15 </th>
+    <th> 7 </th>
+    <th> 6 </th>
+    <th> 52 </th>
+  </tr>
+</table>
+
+<p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/i1AMHbw7DdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
