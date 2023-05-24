@@ -1,0 +1,41 @@
+<h2> May 21, 2023 </h2>
+<h3> Sporting vs Benfica </h3>
+
+<p> Benfica looking to secure the Primeira Liga title in the penultimate match of the season. </p>
+
+<p> The table heading into this game: </p>
+
+<table>
+  <tr>
+    <th> </th>
+    <th> W </th>
+    <th> D </th>
+    <th> L </th>
+    <th> Pts </th>
+  </tr>
+  <tr>
+    <th> Benfica </th>
+    <th> 27 </th>
+    <th> 2 </th>
+    <th> 3 </th>
+    <th> 83 </th>
+  </tr>
+  <tr>
+    <th> Porto </th>
+    <th> 25 </th>
+    <th> 4 </th>
+    <th> 3 </th>
+    <th> 79 </th>
+  </tr>
+  <tr>
+    <th> Braga </th>
+    <th> 24 </th>
+    <th> 2 </th>
+    <th> 5 </th>
+    <th> 74 </th>
+  </tr>
+</table>
+
+<p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/t2xCN4mDfBc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
