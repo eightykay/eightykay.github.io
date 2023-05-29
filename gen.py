@@ -11,6 +11,7 @@ with open('index.html', 'w') as fid:
     fid.write('<link rel="stylesheet" href="style.css" />\n')
     fid.write('<head>\n')
     fid.write('<meta http-Equiv="Cache-Control" Content="no-cache" />\n<meta http-Equiv="Pragma" Content="no-cache" />\n<meta http-Equiv="Expires" Content="0" />\n')
+    fid.write('<title>eightykay</title>\n')
     fid.write('</head>\n')
     fid.write('<body>\n')
     for i0 in data:
