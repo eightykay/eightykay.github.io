@@ -1,34 +1,127 @@
-Likelihood of first place<br>
-<br>
-Atlanta               0.0<br>
-Austin                0.0<br>
-Charlotte             0.0<br>
-Chicago               0.0<br>
-Cincinnati           12.0<br>
-Colorado              0.0<br>
-Columbus              7.1<br>
-D.C.                  0.0<br>
-Dallas                0.0<br>
-Houston               0.0<br>
-Kansas City           0.0<br>
-LA                    7.5<br>
-LAFC                 12.4<br>
-Miami                57.1<br>
-Minnesota             0.0<br>
-Montréal              0.0<br>
-Nashville             0.0<br>
-New England           0.0<br>
-New York              0.3<br>
-New York City         0.0<br>
-Orlando               0.0<br>
-Philadelphia          0.0<br>
-Portland              0.0<br>
-Salt Lake             3.4<br>
-San Jose              0.0<br>
-Seattle               0.0<br>
-St. Louis             0.0<br>
-Toronto               0.0<br>
-Vancouver             0.2<br>
+<table id="myTable">
+<caption>
+Likelihood of first place</caption>
+<tr>
+<th onclick="sortTable(0)">Club</th>
+<th onclick="sortTable(1)">Likelihood</th>
+</tr>
+<tr>
+<td>Atlanta</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Austin</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Charlotte</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Chicago</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Cincinnati</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>Colorado</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Columbus</td>
+<td>7.1</td>
+</tr>
+<tr>
+<td>D.C.</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Dallas</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Houston</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Kansas City</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>LA</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>LAFC</td>
+<td>12.4</td>
+</tr>
+<tr>
+<td>Miami</td>
+<td>57.1</td>
+</tr>
+<tr>
+<td>Minnesota</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Montréal</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Nashville</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>New England</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>New York</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>New York City</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Orlando</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Philadelphia</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Portland</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Salt Lake</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>San Jose</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Seattle</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>St. Louis</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Toronto</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Vancouver</td>
+<td>0.2</td>
+</tr>
+</table>
 <br>
 Entropy of first place: 1.96 bits<br>
 <br>
@@ -208,3 +301,74 @@ Minnesota-St. Louis	0.25<br>
 <br>
 Vancouver-Portland	0.28<br>
 <br>
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (n == 0){
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }}
+        if (n == 1){
+          if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+          }}
+
+      } else if (dir == "desc") {
+        if (n == 0){
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }}
+        if (n == 1){
+          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+        }}
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>

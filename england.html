@@ -1,25 +1,91 @@
-Likelihood of first place<br>
-<br>
-Arsenal               18.5<br>
-Aston Villa           13.8<br>
-Bournemouth            0.0<br>
-Brentford              0.2<br>
-Brighton               0.0<br>
-Chelsea                9.1<br>
-Crystal Palace         0.1<br>
-Everton                0.0<br>
-Fulham                 0.1<br>
-Ipswich                0.0<br>
-Leicester              0.0<br>
-Liverpool             15.8<br>
-Man City              16.8<br>
-Man Utd                0.1<br>
-Newcastle             12.9<br>
-Nott'm Forest          0.0<br>
-Southampton            0.0<br>
-Spurs                 12.2<br>
-West Ham               0.4<br>
-Wolves                 0.0<br>
+<table id="myTable">
+<caption>
+Likelihood of first place</caption>
+<tr>
+<th onclick="sortTable(0)">Club</th>
+<th onclick="sortTable(1)">Likelihood</th>
+</tr>
+<tr>
+<td>Arsenal</td>
+<td>18.5</td>
+</tr>
+<tr>
+<td>Aston Villa</td>
+<td>13.8</td>
+</tr>
+<tr>
+<td>Bournemouth</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Brentford</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>Brighton</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Chelsea</td>
+<td>9.1</td>
+</tr>
+<tr>
+<td>Crystal Palace</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Everton</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Fulham</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Ipswich</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Leicester</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Liverpool</td>
+<td>15.8</td>
+</tr>
+<tr>
+<td>Man City</td>
+<td>16.8</td>
+</tr>
+<tr>
+<td>Man Utd</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Newcastle</td>
+<td>12.9</td>
+</tr>
+<tr>
+<td>Nott'm Forest</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Southampton</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Spurs</td>
+<td>12.2</td>
+</tr>
+<tr>
+<td>West Ham</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td>Wolves</td>
+<td>0.0</td>
+</tr>
+</table>
 <br>
 Entropy of first place: 2.84 bits<br>
 <br>
@@ -482,3 +548,74 @@ Man City-Southampton	0.49<br>
 West Ham-Man Utd	0.46<br>
 Everton-Fulham	0.44<br>
 <br>
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (n == 0){
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }}
+        if (n == 1){
+          if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+          }}
+
+      } else if (dir == "desc") {
+        if (n == 0){
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }}
+        if (n == 1){
+          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+        }}
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
