@@ -14,7 +14,6 @@
             background: #fff; 
             border: 1px solid #ddd; 
             border-radius: 8px; 
-            /* overflow: hidden;  <-- REMOVED so popups aren't clipped */
             box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
             margin-bottom: 30px; 
         }
@@ -51,26 +50,22 @@
         .event-card {
             position: absolute; width: 92%; left: 4%;
             padding: 2px 4px; font-size: 11px; border-radius: 4px; border-left: 4px solid rgba(0,0,0,0.1);
-            /* overflow: visible; <-- IMPORTANT: Must be visible for popup to hang out */
             overflow: visible; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10;
             box-sizing: border-box;
             line-height: 1.2;
             cursor: pointer;
-            height: 100%; /* Default fill */
+            height: 100%; 
         }
         
-        /* The inner content of the card (to handle text clipping independently) */
-        .event-content {
-            width: 100%; height: 100%; overflow: hidden;
-        }
+        .event-content { width: 100%; height: 100%; overflow: hidden; }
         
         /* POPUP BUBBLE */
         .event-details-popup {
-            display: none; /* Hidden by default */
+            display: none; 
             position: absolute;
-            left: 0;
-            top: 100%; /* Appears just below the event start */
+            left: 0; 
+            top: 100%; 
             width: 180px;
             background: #222;
             color: #fff;
@@ -82,27 +77,9 @@
             margin-top: 4px;
         }
         
-        /* Smart Positioning: Right align for late week days */
-        .day-column:nth-child(n+6) .event-details-popup {
-            left: auto; right: 0; 
-        }
-        
-        /* INTERACTION STATES */
-        /* 1. Hover (Desktop) */
-        .event-card:hover {
-            z-index: 100;
-        }
-        .event-card:hover .event-details-popup {
-            display: block;
-        }
-        
-        /* 2. Active Class (Mobile Tap via JS) */
-        .event-card.active {
-            z-index: 100 !important;
-        }
-        .event-card.active .event-details-popup {
-            display: block !important;
-        }
+        /* Interaction States */
+        .event-card.active { z-index: 100 !important; }
+        .event-card.active .event-details-popup { display: block !important; }
         
         /* Colors */
         .type-task { background-color: #e3f2fd; color: #1565c0; border-left-color: #1565c0; }
@@ -115,15 +92,60 @@
     </style>
     <script>
         function toggleEvent(card) {
-            // Close all other cards first
+            // 1. Close all other popups
             document.querySelectorAll('.event-card').forEach(c => {
                 if (c !== card) c.classList.remove('active');
             });
-            // Toggle clicked card
+            
+            // 2. Toggle the clicked one
             card.classList.toggle('active');
+            
+            // 3. Smart Positioning Logic
+            if (card.classList.contains('active')) {
+                const popup = card.querySelector('.event-details-popup');
+                if (!popup) return;
+
+                const cardRect = card.getBoundingClientRect();
+                const popupWidth = 180; // Fixed width from CSS
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+                
+                // --- Horizontal Check ---
+                // Calculate ideal absolute X position (defaulting to aligning with left of card)
+                let idealX = cardRect.left;
+                
+                // If it goes off the right edge, push it left
+                if (idealX + popupWidth > windowWidth - 10) {
+                    idealX = windowWidth - popupWidth - 10;
+                }
+                
+                // If it goes off the left edge (rare, but possible), push it right
+                if (idealX < 10) {
+                    idealX = 10;
+                }
+                
+                // Apply correction (relative to the card's position)
+                popup.style.left = (idealX - cardRect.left) + 'px';
+                popup.style.right = 'auto'; // clear any right alignment
+                
+                // --- Vertical Check ---
+                // If the popup is near the bottom of the screen, flip it UP
+                popup.style.top = '100%';
+                popup.style.bottom = 'auto';
+                popup.style.marginTop = '4px';
+                
+                const popupRect = popup.getBoundingClientRect();
+                if (popupRect.bottom > windowHeight - 10) {
+                    // Flip up
+                    popup.style.top = 'auto';
+                    popup.style.bottom = '100%';
+                    popup.style.marginTop = '0';
+                    popup.style.marginBottom = '4px';
+                }
+            }
         }
         
-        // Close when clicking outside
+        // Close popups when clicking on blank space
         window.onclick = function(event) {
             if (!event.target.closest('.event-card')) {
                 document.querySelectorAll('.event-card').forEach(c => c.classList.remove('active'));
@@ -133,7 +155,7 @@
     </head>
     <body>
     <h1>📅 Generated Schedule</h1>
-    <p style="text-align:center; color:#777; font-size: 0.9em;">Tap/Hover events for details.</p>
+    <p style="text-align:center; color:#777; font-size: 0.9em;">Tap events to view details.</p>
     <h2>Week of Dec 29 - Jan 04</h2><div class="calendar-wrapper"><div class="time-col-header"></div><div class="header-cell">Mon <br><span style="font-weight:normal; font-size:0.8em">29</span></div><div class="header-cell">Tue <br><span style="font-weight:normal; font-size:0.8em">30</span></div><div class="header-cell">Wed <br><span style="font-weight:normal; font-size:0.8em">31</span></div><div class="header-cell">Thu <br><span style="font-weight:normal; font-size:0.8em">1</span></div><div class="header-cell">Fri <br><span style="font-weight:normal; font-size:0.8em">2</span></div><div class="header-cell">Sat <br><span style="font-weight:normal; font-size:0.8em">3</span></div><div class="header-cell">Sun <br><span style="font-weight:normal; font-size:0.8em">4</span></div><div class="time-labels"><div class="time-label"><span>08 AM</span></div><div class="time-label"><span>09 AM</span></div><div class="time-label"><span>10 AM</span></div><div class="time-label"><span>11 AM</span></div><div class="time-label"><span>12 PM</span></div><div class="time-label"><span>01 PM</span></div><div class="time-label"><span>02 PM</span></div><div class="time-label"><span>03 PM</span></div><div class="time-label"><span>04 PM</span></div><div class="time-label"><span>05 PM</span></div><div class="time-label"><span>06 PM</span></div><div class="time-label"><span>07 PM</span></div><div class="time-label"><span>08 PM</span></div><div class="time-label"><span>09 PM</span></div><div class="time-label"><span>10 PM</span></div></div><div class="day-column"></div><div class="day-column"></div><div class="day-column"></div><div class="day-column"></div><div class="day-column"></div><div class="day-column"></div><div class="day-column">
                 <div class="event-card type-event" style="top: 0.0%; height: 100.0%;" onclick="toggleEvent(this)">
                     <div class="event-content">
