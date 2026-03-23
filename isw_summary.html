@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISW Research Summary</title>
+  <style>
+    :root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #333333;
+  --muted-color: #666666;
+  --border-color: #eeeeee;
+  --max-width: 800px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 1rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.date {
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.summary-topic {
+  margin-bottom: 3rem;
+}
+
+.summary-topic h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.paragraph-container {
+  margin-bottom: 2rem;
+}
+
+.summary-content {
+  margin-bottom: 0.5rem;
+}
+
+.events-list {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.events-list ul {
+  padding-left: 1.2rem;
+}
+
+.events-list li {
+  margin-bottom: 0.8rem;
+}
+
+.sources {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+  background: #fcfcfc;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--border-color);
+}
+
+.mini-sources {
+  font-size: 0.75rem;
+  color: var(--muted-color);
+  background: #fcfcfc;
+  padding: 0.4rem 0.8rem;
+  border-left: 2px solid var(--border-color);
+  margin-top: 0.5rem;
+}
+
+.mini-sources-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.mini-source-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.mini-source-link:hover {
+  color: var(--accent-color);
+  border-bottom-style: solid;
+}
+
+.citation {
+  font-size: 0.8em;
+  vertical-align: super;
+  text-decoration: none;
+  color: var(--muted-color);
+  font-weight: 500;
+  margin-left: 1px;
+}
+
+.citation:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.sources h4 {
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sources li {
+  margin-bottom: 0.3rem;
+}
+
+.sources a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-color);
+}
+
+.sources a:hover {
+  color: var(--accent-color);
+  border-bottom-style: solid;
+}
+
+footer {
+  margin-top: 5rem;
+  font-size: 0.8rem;
+  color: var(--muted-color);
+  text-align: center;
+}
+
+/* Tabs Styling */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tabs label {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #f4f4f4;
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  font-weight: 600;
+}
+
+.tabs .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ISW Research Summary</h1>
+    <p class="date">Updated: March 22, 2026 | Analysis Period: Last 3 Months</p>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <input type="radio" name="tabs" id="tabday" checked="checked">
+      <label for="tabday">Last 3 Days</label>
+      <div class="tab">
+        <h2>Detailed Takeaways (Last 3 Days)</h2>
+        
+          
+            <article class="summary-topic">
+              <h3>Russia & Ukraine</h3>
+              <div class="summary-content">
+                <h1>Russia &amp; Ukraine</h1>
+<h2>March 22, 2026</h2>
+<p>Russian Offensive Campaign Assessment, March 22, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>A senior Ukrainian military official forecasted that Russia will begin using mobilized personnel on the battlefield in Ukraine on April 1. </p>
+<h3>Key takeaway 2</h3>
+<p>Ukrainian Southern Defense Forces Spokesperson Colonel Vladyslav Voloshyn told Ukrainian outlet Interfax Ukraine on March 21 that Russia will begin involving all mobilized personnel currently in Crimea in combat operations in Ukraine starting April 1. Voloshyn stated that mobilized personnel will replace wounded personnel and replenish the Russian 810th Separate Naval Infantry Brigade (Black Sea Fleet), elements of which are currently operating in the Kursk direction and in the “Crimea” operational-tactical group. Russia may be resorting to deploying mobilized personnel as Russian forces continue to incur heavy losses on the battlefield while struggling to recruit enough new volunteers to replace its losses. Voloshyn added that the Russian military command plans to reorganize its 810th Separate Naval Infantry Brigade into a naval infantry division, which would be the tenth new maneuver division that Russia has formed since 2022. The Russian military command most recently reorganized its 155th Naval Infantry Brigade (Pacific Fleet) into the 55th Naval Infantry Division and its 336th Naval Infantry Brigade (Baltic Fleet) into the 120th Naval Infantry Division as of December 2025. </p>
+<h3>Key takeaway 3</h3>
+<p>Ukrainian counterattacks in southern Ukraine continue to create operational and strategic effects against Russian forces going into the Spring-Summer 2026 offensive. </p>
+<h3>Key takeaway 4</h3>
+<p>Voloshyn stated that the Russian military command is transferring elements of the Russian 55th and 120th naval infantry divisions </p>
+<h3>Key takeaway 5</h3>
+<p>to the 29th Combined Arms Army’s (CAA, Eastern Military District [EMD]) area of responsibility (AoR) in the Oleksandrivka and northern Hulyaipole directions. Voloshyn noted that these forces could then participate in combat operations starting in April 2026. ISW recently observed reports that elements of the 55th Naval Infantry Division (Pacific Fleet) and 120th Naval Infantry Division redeployed from the Dobropillya tactical area to the Hulyaipole and Oleksandrivka directions as of late February 2026 and mid-March 2026 respectively, likely in response to the successful Ukrainian counterattacks in the area. Voloshyn stated that the Russian 58th CAA (Southern Military District [SMD]), reportedly operating in western Zaporizhia Oblast and the Kherson direction, will have to replenish elements of its 19th and 42nd motorized rifle divisions with reserve elements of the Moscow Military District (MMD). Russian forces have reportedly already been deploying forces from their operational reserve simply to support ongoing combat operations and likely laterally redeployed elite VDV and naval infantry units from Donetsk Oblast to the southern frontline in early March 2026. Ukrainian forces’ dual tactical efforts to halt and push back Russian gains in southern Ukraine are having cascading effects on other sectors of the front, forcing Russian forces to choose between defending against the Ukrainian counterattacks and allocating manpower and materiel for offensive operations elsewhere on the frontline. Russia’s redeployments to southern Ukraine in response to Ukrainian counterattacks are likely disrupting the Russian military command’s plans for the Spring-Summer 2026 offensive against the Fortress Belt. Russian forces have previously failed to conduct simultaneous offensives in different sectors of the front, and it is unlikely that they will be able to make significant efforts to advance in the Fortress Belt area while contending with Ukraine’s recent successes in the Hulyaipole and Oleksandrivka directions. </p>
+<h3>Key takeaway 6</h3>
+<p>Likely Belarusian balloons recently landed in Poland, possibly as part of Russia’s ongoing use of Belarus in its “Phase Zero” effort, setting conditions for a potential future war with NATO. </p>
+<h3>Key takeaway 7</h3>
+<p>Polish authorities reported on March 21 that they found five balloons and 10 foil-wrapped packages in fields across Podlaskie Voivodeship along Poland’s eastern border with Belarus. The officials did not state where the balloons originated, but Belarusian balloons have frequently violated Polish airspace since October 2025, including five times since January 27. ISW continues to assess that Russia has de facto annexed Belarus and that Russia is likely using airspace incursions into NATO states like Lithuania and Poland from Belarus as part of its “Phase Zero” effort — the informational and psychological condition-setting phase — to prepare for a possible NATO-Russia war in the future. </p>
+<h2>March 21, 2026</h2>
+<p>Russian Offensive Campaign Assessment, March 21, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>Russian forces have likely begun their anticipated Spring-Summer 2026 offensive against the Ukrainian Fortress Belt, Ukraine’s main defensive line in Donetsk Oblast. </p>
+<h3>Key takeaway 2</h3>
+<p>Russian forces have begun intensified ground operations in the Lyman direction to advance on Slovyansk, the northern tip of the Fortress Belt, from the northeast, likely to set conditions for an additional push on Slovyansk from the east and southeast at a later date. The Ukrainian 3rd Army Corps (AC) and Joint Forces Task Force reported on March 21 that elements of the Russian 1st Guards Tank Army (GTA, Moscow Military District [MMD]) and 20th Guards Combined Arms Army (CAA, MMD) conducted a roughly battalion-sized mechanized and motorized assault in the Lyman direction on March 19. The Ukrainian 3rd AC and Joint Forces Task Force reported that Russian forces conducted an assault in seven prongs and fielded over 500 Russian infantrymen, dozens of armored vehicles, and more than 100 motorcycles, buggies, and all-terrain vehicles (ATVs). This battalion-sized assault is considerably larger than most Russian mechanized assaults in recent months, and the reinforced company-sized assault Russian forces conducted near Shandryholove (northwest of Lyman) on March 19 was likely a component of this broader battalion-sized assault. The spokesperson of a Ukrainian mechanized brigade operating in the Lyman direction stated on March 21 that Lyman is a key strongpoint on the route to Slovyansk and could serve as a stronghold for Russian efforts to seize both Slovyansk and Kramatorsk – indicating that intensified Russian efforts against Lyman are necessary to set conditions for further assaults against Slovyansk and Kramatorsk. The spokesperson noted that Russian forces are increasing pressure against Ukrainian forces through intensified assaults with large numbers of infantry and equipment. The spokesperson also noted Russian forces are adapting their tactics by switching from attacking in mechanized columns to dispersing vehicles along various prongs of an assault simultaneously, similar to dispersed infantry tactics. Russian forces may be attacking along various prongs to overwhelm and distract Ukraine’s drone-based defenses. The spokesperson added that Russian forces are also conducting more KAB-3000 guided glide bombs, Lancet loitering munitions, and Molniya fixed-wing drone strikes in the Lyman direction. A Russian milblogger claimed on March 20 that Russian forces conducted a FAB guided glide bomb strike on Slovyansk. These air and drone strikes are likely a continuation of the Russian battlefield air interdiction (BAI) campaign in the Lyman direction, which aims to degrade Ukrainian logistics and defensive abilities ahead of ground operations to enable Russian forces to make more rapid, easier territorial advances. </p>
+<h3>Key takeaway 3</h3>
+<p>Russian forces are also setting conditions to begin intensified ground operations in the Kramatorsk and Kostyantynivka directions to develop the offensive against the Fortress Belt from the south. </p>
+<h3>Key takeaway 4</h3>
+<p>Ukrainian 11th AC Spokesperson Lieutenant Colonel Dmytro Zaporozhets reported on March 21 that Russian forces have recently intensified ground assaults in the Slovyansk and Kramatorsk directions in preparation for future offensive operations and to advance to the heights on the approaches to Kostyantynivka, the southern tip of Ukraine’s Fortress Belt. Zaporozhets reported that Russian forces are actively moving personnel on the approaches to Kostyantynivka; intensifying first-person view (FPV) and Molniya drone strikes from Chasiv Yar (northeast of Kostyantynivka); have brought up armored and other vehicles to the direction; and have doubled artillery and tactical aviation strikes in the Kramatorsk direction. Russian forces are intensifying ground assaults and strikes, and the movement of heavy equipment and troops toward the frontline is likely in an effort to set conditions for the Spring-Summer 2026 offensive and to expand ground operations from the south of the Fortress Belt. Russian forces have also been conducting a BAI campaign against the southern tip of the Fortress Belt since at least late February 2026 to prepare for the upcoming campaign, striking main Ukrainian ground lines of communication (GLOCs) in the area and settlements immediately in the vicinity of Kramatorsk. </p>
+<h3>Key takeaway 5</h3>
+<p>Russian forces are unlikely to seize the Fortress Belt in 2026 but will likely make some tactical gains at a significant cost. </p>
+<h3>Key takeaway 6</h3>
+<p>The Ukrainian 3rd AC and Joint Forces Task Force reported on March 21 that Russian forces suffered 405 casualties out of over 500 personnel involved in the March 19 battalion-sized mechanized assault. Such a casualty rate is unsustainable and would likely degrade the Russian ability to wage such large assaults in the mid- to long-term. Zaporozhets reported that Russian forces are attempting to capture key heights east of Slovyansk, including near Kryva Luka, which Ukrainian forces currently use as drone operator positions. Zaporozhets noted that Russian forces will continue ground assaults to secure their flanks because Ukrainian forces maintain positions on favorable terrain. The Ukrainian control of dominant heightseast of Slovyansk will likely complicate Russian advances toward Slovyansk from the comparatively low-lying terrain around Siversk. The exhausted, poorly trained, and overstretched Russian troops in the Slovyansk direction will likely further limit Russian gains in the area. The spokesperson of a Ukrainian mechanized brigade operating in the Lyman direction reported that Russian forces have reduced basic training for personnel conducting ground assaults from one month to one week – likely to accelerate the deployment of new recruits to the frontline to compensate for heavy casualties in costly assaults. Ukrainian military observer Kostyantyn Mashovets assessed on February 2 that elements of the Russian Western Grouping of Forces, including the 20th CAA and 1st GTA, lack the strength to seize Lyman as the grouping may have diverted significant forces to counter the Ukrainian counterattacks that have significantly liberated most of Kupyansk. ISW assessed at the time that Russian forces would likely be unable to launch and maintain an offensive in the Slovyansk direction without receiving additional forces or deprioritizing the Kupyansk offensive, and the Russian efforts to accelerate training are likely part of efforts to generate more forces for the offensive. </p>
+<h3>Key takeaway 7</h3>
+<p>Ukrainian forces are taking countermeasures, which will likely further complicate Russian advances, such as more intensively targeting Russian multiple launch rocket systems (MLRS) in the Slovyansk and Kostyantynivka directions to disrupt Russian artillery preparation and expanding their mid-range strike campaign to degrade both Russian offensive and defensive capabilities. Ukrainian forces will likely continue to impose high costs on the Russian spring-summer offensive as they continue conducting a parallel BAI campaign to degrade Russia’s offensive capabilities, particularly in the Slovyansk direction. </p>
+<h3>Key takeaway 8</h3>
+<p>The US and Ukrainian delegations held a bilateral meeting in Miami, Florida, on March 21. </p>
+<h3>Key takeaway 9</h3>
+<p>US Special Envoy to the Middle East Steve Witkoff reported on March 21 that a US delegation, including Witkoff, former Senior Advisor to the US President Jared Kushner, White House Senior Advisor Josh Gruenbaum, and State Department Senior Policy Advisor Chris Curran held “constructive” meetings with the Ukrainian delegation and discussed moving toward a peace agreement. Ukrainian Defense Council Secretary Rustem Umerov reported that the Ukrainian delegation included Ukrainian Presidential Office Head Kyrylo Budanov, Ukrainian Presidential Office First Deputy Head Serhiy Kyslytsya, and Ukrainian Servant of the People Party Head Davyd Arakhamia. Ukrainian President Volodymyr Zelensky and Umerov stated that the US and Ukrainian delegations will continue talks on March 22. </p>
+<h3>Key takeaway 10</h3>
+<p>Ukrainian forces downed another Russian military helicopter on March 21, marking the second time that Ukrainian forces have downed a helicopter in two days. A Russian milblogger who frequently reports on the Russian Aerospace Forces (VKS) claimed on March 21 that Russian forces lost another Ka-52 attack helicopter that morning in an unspecified location, and Ukrainian sources and other Russian milbloggers indicated that Ukrainian forces downed the helicopter. The sources did not specify the means Ukrainian forces used to down the helicopter on March 21, but Ukrainian forces downed a Russian Ka-52 using a fiber optic FPV drone in the Pokrovsk direction on March 20. The March 20 helicopter downing prompted milblogger criticism of Russian forces’ use of the helicopters close to the frontlines within range of Ukrainian FPV drones. The milblogger who frequently reports on the Russian VKS claimed on March 21 that Russian MI-8 helicopter crews have been jerry-rigging or needing to purchase their own electronic warfare (EW) systems to protect against Ukrainian drones, but that these methods are insufficient, as infantry EW systems do not work with helicopters. Another Russian milblogger criticized Russian sources who publicize reports of downed Russian aircraft and called for Russia to “end this information frenzy” and crack down on milbloggers who “stage hysterical outbursts” about the situation on the frontline. </p>
+<h2>March 20, 2026</h2>
+<p>Russian Offensive Campaign Assessment, March 20, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>Russian forces are increasingly conducting mechanized assaults on the frontline, possibly as part of intensified preparation for their Spring-Summer 2026 offensive. </p>
+<h3>Key takeaway 2</h3>
+<p>ISW has observed an increase in Russian mechanized assaults in various sectors of the front since March 17. Russian forces conducted a roughly reduced company-sized mechanized and motorized assault toward Novopavlivka on March 17; reduced platoon-sized mechanized assaults in the Kupyansk direction and near Myrnohrad (east of Pokrovsk) on March 18; and a platoon-sized mechanized assault in Hryshyne (northwest of Pokrovsk) and a reinforced company-sized assault near Shandryholove (northwest of Lyman) on March 19. Some of these mechanized assaults may have been Russian reconnaissance-in-force missions that aim to probe, identify, or test Ukrainian positions ahead of future ground assaults in the spring-summer campaign. </p>
+<h3>Key takeaway 3</h3>
+<p>ISW has observed other indications of Russian preparation for the spring-summer offensive. Russian forces began shelling settlements immediately near Kramatorsk in late February 2026. Russian forces have also been conducting a battlefield air interdiction (BAI) campaign against the southern tip of the Fortress Belt since at least late February 2026 to prepare for the upcoming campaign, striking main Ukrainian ground lines of communication (GLOCs) in the area. Russian forces have repeatedly struck dams near Kostyantynivka and in the Pokrovsk direction since late February 2026, likely in an attempt to interrupt Ukrainian logistics and flood Ukrainian positions. ISW has seen reports that Russia may launch its spring-summer offensive against the Fortress Belt in Donetsk Oblast, and mechanized assaults and strikes in the Lyman, Kostyantynivka, and Pokrovsk directions may be part of efforts to prepare for attacks on the Fortress Belt from the north and south in the future. These various preparations suggest that the ground phase of the spring-summer offensive campaign is nearing, if it is not already underway. The anticipated Spring-Summer 2026 offensive is unlikely to bring to bear substantial amounts of armor in multiple, simultaneous, mechanized attacks on Ukrainian positions; however, considering the drone-dense frontline and Russian armor shortages. Russian forces are more likely to commit more limited amounts of armor to localized, pulsing offensives at multiple parts of the frontline. </p>
+<h3>Key takeaway 4</h3>
+<p>Ukraine remains committed to holding safe, free, and fair elections, but the Kremlin is refusing to commit to the ceasefire necessary to hold such elections. </p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>Middle East</h3>
+              <div class="summary-content">
+                <h1>Middle East</h1>
+<h2>March 22, 2026</h2>
+<p>Iran Update Evening Special Report: March 22, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>US President Donald Trump threatened on March 21 to “obliterate” Iranian power plants if Iran does not “fully open” the Strait of Hormuz within 48 hours. Iran has threatened to attack regional energy infrastructure if the United States attacks power plants in Iran. ISW-CTP has recorded several Iranian attacks on regional energy infrastructure since the war began on February 28, but the new threats could entail an expansion of such attacks. </p>
+<h3>Key takeaway 2</h3>
+<p>IRGC Ground Forces Commander Brigadier General Mohammad Karami visited unspecified IRGC Ground Forces units in western and northwestern Iran on March 22. The visit of the IRGC Ground Forces commander to units in northwestern provinces along Iran’s border is notable given the combined force’s efforts to degrade internal security institutions in Iran’s western border region and reports about possible armed Kurdish mobilization along the Iran-Iraq border. </p>
+<h3>Key takeaway 3</h3>
+<p>The combined force continued to conduct airstrikes targeting Iranian missile production and storage facilities. The combined force targeted sites that produce short- and medium-range ballistic missiles, including the Fath-360 with a maximum range of 120 kilometers (km), Fateh-110 with a maximum range of 300km, the Zolfaghar with a maximum range of 700km, and the medium-range Haj Qasem ballistic missile with a maximum range of 1,400 km. Iran notably has supplied Russia with Fath-360s for Russia’s offensive campaign in Ukraine. </p>
+<h3>Key takeaway 4</h3>
+<p>The IRGC has reportedly restructured Hezbollah under a more decentralized command model following Israeli operations that degraded the group’s leadership in 2024. This decentralized structure aimed to improve operational security and reduce vulnerability to Israeli intelligence penetration. </p>
+<h2>March 21, 2026</h2>
+<p>Iran Update Special Report, March 21, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>Iran launched two ballistic missiles targeting the US-UK base at Diego Garcia in the Indian Ocean on March 21, marking the furthest ever attempted Iranian missile strike. The attack demonstrated that Iranian missiles can reach beyond the 2,000-kilometer limit that the regime has long claimed to have self-imposed. One missile failed inflight, and the United States intercepted the other. </p>
+<h3>Key takeaway 2</h3>
+<p>The Islamic Revolutionary Guards Corps (IRGC) has reportedly expanded its influence over regime decision-making amid a growing power vacuum caused by leadership losses and Supreme Leader Mojtaba Khamenei’s apparent inability to exercise full authority. Some of the officials who have likely expanded their influence are among the most aggressive and repressive elements within the IRGC. </p>
+<h3>Key takeaway 3</h3>
+<p>The United States Treasury Department issued a short-term waiver on March 20, permitting the sale of Iranian oil already in transit. The waiver does not allow for new purchases of oil. </p>
+<h3>Key takeaway 4</h3>
+<p>The combined force continued to degrade Iran’s missile production capabilities. The IDF struck at least five missile production sites in Tehran. </p>
+<h2>March 20, 2026</h2>
+<p>Iran Update Special Report, March 20, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>Circumstantial evidence suggests that Iranian Supreme Leader Mojtaba Khamenei is still badly injured or otherwise incapacitated. The regime could easily dispel these rumors with a simple video but has not, despite having many incentives to do so. This comes as US officials have stated that Mojtaba was seriously wounded. </p>
+<h3>Key takeaway 2</h3>
+<p>Iranian leaders have said that they will continue to impede international shipping around the Strait of Hormuz after the war ends. Iranian Parliament Speaker Mohammad Bagher Ghalibaf said on X on March 17 that “the Strait of Hormuz situation won’t return to its pre-war status.” </p>
+<h3>Key takeaway 3</h3>
+<p>Hezbollah claimed 55 attacks targeting Israeli forces and positions in northern Israel and southern Lebanon, as well as targeting northern Israeli towns between 3:00 PM ET on March 18 and 3:00 PM ET on March 19. Most of Hezbollah’s claimed attacks targeted Israeli forces and military sites in southern Lebanon and northern Israel. </p>
+<p>Iranian Ballistic Missiles and Drones Launched at Saudi Arabia Between March 1, 2026 and March 20, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>The United States and Israel have degraded Iran’s ability to conduct retaliatory attacks across the Middle East. This graphic shows the decrease in Iranian ballistic missile, cruise missile, and drone attacks targeting Saudi Arabia since the start of the US-Israeli combined force’s war against Iran on February 28, 2026. </p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>East Asia</h3>
+              <div class="summary-content">
+                <h1>East Asia</h1>
+<h2>March 20, 2026</h2>
+<p>China &amp; Taiwan Update, March 20, 2026</p>
+<h3>Key takeaway 1</h3>
+<p>US President Donald Trump announced on March 17 that he would delay his planned talks with CCP General Secretary Xi Jinping to prioritize the conflict in Iran. </p>
+<h3>Key takeaway 2</h3>
+<p>US Treasury Secretary Scott Bessent met with PRC Vice Premier He Lifeng on March 15 and 16 to discuss issues related to US-PRC trade, including the prospect of a “Board of Trade” that would manage bilateral trade and investment, as a precursor to the Trump-Xi summit. Both sides reported that the talks were productive, though they did not announce any new initiatives or purchasing commitments. The Bessent-He talks followed a March 11 announcement from US Trade Representative Jamieson Greer on new Section 301 investigations into unfair trade practices that could impose new tariffs on several countries, including the PRC. The PRC Ministry of Commerce rejected these investigations on March 13, and He reiterated PRC concerns over the investigations and other US trade restrictions. </p>
+<h3>Key takeaway 3</h3>
+<p>Trump announced on March 16 (and confirmed on March 17) that he would delay the summit with Xi “five or six weeks” to prioritize the conflict in Iran. The White House confirmed that the PRC agreed to Trump’s request on March 18. The United States and the PRC have not yet announced the new date for the Trump-Xi summit at time of writing. The delay in the Trump-Xi summit will extend the trade dispute between the two states, but the demands of each side are unlikely to change significantly. The impact of the Iran conflict and disruption of trade through the Strait of Hormuz will continue to impact both the PRC and the United States prior to the summit. The PRC will likely attempt to exploit any US economic and political discontent with the conflict in future negotiations to ensure that it can obtain the best possible terms. </p>
+<h3>Key takeaway 4</h3>
+<p>Taiwanese think tank Doublethink Lab published a report revealing that a PRC state-affiliated firm compiled information on tens of thousands of prominent Taiwanese people, including 170 politicians, to support PRC cognitive warfare and election interference campaigns in Taiwan. </p>
+<h3>Key takeaway 5</h3>
+<p>Doublethink Lab published a report on March 4 that found that the PRC firm GoLaxy compiled an extensive database of Taiwanese politicians, political parties, and influential individuals to monitor and influence Taiwanese public opinion, especially during elections. Doublethink Lab based the report on leaked documents obtained by Vanderbilt University around August 2025. The database includes detailed files on 170 Taiwanese politicians including President William Lai Ching-te, former president Tsai Ing-wen, foreign minister Lin Chia-lung, and Taiwan People’s Party (TPP) founder Ko Wen-je. It also includes records of tens of thousands of prominent Taiwanese academic, business, and religious figures; around 75 political parties; nearly 1,500 companies, 13,000 religious groups, nearly 24,000 civic organizations; and 23 million household registration records — roughly Taiwan’s entire population. The database included categorization and search functions for individuals and organizations that included ideology, address, and “attitude toward China.” The leaked documents also showed that GoLaxy produced a weekly report on Taiwanese public opinion in the months before Taiwan’s January 2024 presidential and legislative elections. </p>
+<h3>Key takeaway 6</h3>
+<p>The GoLaxy database shows an extensive effort to support PRC narrative warfare and election interference in Taiwan, including using artificial intelligence (AI). GoLaxy spun off from the Institute of Computing Technology at the Chinese Academy of Sciences (CAS), the PRC’s premier state-owned research institution. GoLaxy aimed to create a “smart propaganda system.” GoLaxy sought for greater guidance and funding from state agencies, including the Cyberspace Administration of China, the Central Propaganda Department, the Science and Technology Commission of the Central Military Commission, and the Ministry of State Security. GoLaxy seeks to create a system of online bots to automatically produce targeted PRC propaganda based on the data collected by its machine learning platform. </p>
+<h3>Key takeaway 7</h3>
+<p>The PRC will very likely try to use AI-backed narrative warfare to shape the outcomes of Taiwan’s upcoming local and presidential elections and promote political division in Taiwan. ISW-CDOT previously reported on audio leaks that appeared to show members of the then PLA Strategic Support Force and a PRC tech firm discussing how to boost the Han Kuo-yu’s 2018 Kaohsiung mayoral campaign. Han served as Kaohsiung’s mayor until 2020 and is now the speaker of the Taiwan’s Legislative Yuan (LY). The GoLaxy files also showed that the company was tracking US politics using a database of US political figures and prominent elites, including all members of Congress and 2022 Congressional candidates. It is unclear the extent to which the firm attempted to influence US elections and public opinion, however. </p>
+              </div>
+            </article>
+          
+        
+      </div>
+
+      <input type="radio" name="tabs" id="tabweek">
+      <label for="tabweek">Last 3 Weeks</label>
+      <div class="tab">
+        <h2>Weekly Summaries (Last 3 Weeks)</h2>
+        
+          
+            <article class="summary-topic">
+              <h3>Russia & Ukraine</h3>
+              <div class="summary-content">
+                <h1>Russia &amp; Ukraine</h1>
+<h2>Week of March 16, 2026</h2>
+<p>Russian forces are facing setbacks on the battlefield in Ukraine, with Ukrainian counterattacks in Dnipropetrovsk Oblast forcing Moscow to redeploy troops and potentially spoil its anticipated spring-summer 2026 offensive. The Kremlin continues to reject any negotiated settlement that fails to concede to all of Russia's demands, even as Russian forces are reeling from the February 1 Starlink block and struggling with internal communications issues. Meanwhile, the Kremlin has implemented extensive blocking measures, including throttling Telegram domestically and setting conditions to block it completely, as part of its recent escalation of internet censorship campaign. These measures, particularly in Moscow and St. Petersburg, demonstrate the Russian regime's desperation to maintain control and suppress dissent as its war effort in Ukraine becomes increasingly unpopular and unsustainable.</p>
+<h2>Week of March 09, 2026</h2>
+<p>The Russian military command's plans for a spring-summer 2026 offensive in Ukraine's Fortress Belt have been seriously derailed by Ukrainian counterattacks in the Oleksandrivka, Hulyaipole, and Zaporizhia directions. The counterattacks have forced the Russian command to rapidly redeploy forces and adapt to communication and command and control problems resulting from the Starlink block. As a result, Russian forces are struggling to sustain offensive operations and are being stretched thinly, making it unlikely that Russia will be able to achieve its unrealistic goals of advancing towards Zaporizhzhia City. The cascading effects of the Ukrainian counterattacks are also having strategic implications, further constraining the Russian force structure and hindering its ability to project power in other areas of the theater.</p>
+<h2>Week of March 02, 2026</h2>
+<p>Russia's war in Ukraine is expected to continue at a minimum until September 2026, as evidenced by Kremlin insider reports planning for the war effort to influence the upcoming State Duma elections. While the war's dynamics on the ground may evolve, Russia's military strategy will likely shift to target Ukraine's logistics and water infrastructure, after initial failures to break Ukraine's energy grid. This development highlights the ongoing need for partner support in providing a diverse Ukrainian air defense umbrella, learning from Ukraine's years of experience defending against large-scale Russian missile and drone strikes.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>Middle East</h3>
+              <div class="summary-content">
+                <h1>Middle East</h1>
+<h2>Week of March 16, 2026</h2>
+<p>Here is the summary:</p>
+<p>US President Donald Trump threatened to "obliterate" Iranian power plants if Iran does not fully open the Strait of Hormuz within 48 hours. Iran launched ballistic missiles targeting the US-UK base at Diego Garcia, marking the furthest-ever attempted Iranian missile strike. The combined force continued to degrade Iran's missile production capabilities, with the IDF striking at least five missile production sites in Tehran. Israel targeted Iranian internal security forces, including decapitation strikes, and critical energy infrastructure, causing shock and confusion within the Iranian internal security apparatus. Iran continued to conduct drone and missile attacks, but the US and Israel have degraded its ability to conduct retaliatory attacks across the Middle East.</p>
+<h2>Week of March 09, 2026</h2>
+<p>The conflict between the US-Israeli combined force and Iran remains intense, with the combined force continuing to strike key Iranian targets, including ballistic missile infrastructure, internal security institutions, and weapons production sites. Despite Iran's efforts to retaliate, its missile and drone capabilities have been severely degraded, limiting its ability to launch attacks. The IDF has conducted hundreds of airstrikes in Lebanon, targeting Hezbollah and degrading its ability to launch attacks. Meanwhile, Ukraine has offered to share its expertise in downing Shahed drones with Gulf states, highlighting the importance of global cooperation in addressing the Iranian drone threat. As the conflict continues, Iran's internal dynamics are being reshaped by the appointment of Mojtaba Khamenei as the next Supreme Leader, which may bring about increased hardline influence and a renewed focus on domestic and foreign policy.</p>
+<h2>Week of March 02, 2026</h2>
+<p>Since February 28, the combined US-Israeli air campaign has continued to degrade Iran's retaliatory capabilities, achieving air superiority over Tehran City and conducting waves of airstrikes concentrated in the city. The campaign has targeted Iranian nuclear infrastructure, including the Natanz Nuclear Facility, and has repeatedly struck Iranian missile launchers, likely rendering them inoperable. The US and Israel have also attacked Iranian naval assets, including the Artesh Navy IRIS Kurdistan, to prevent retaliatory attacks against international shipping and US Navy vessels. Additionally, the combined force has targeted Iranian internal security apparatus, striking regime command centers, Basij bases, and Law Enforcement Command sites across Iran.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>East Asia</h3>
+              <div class="summary-content">
+                <h1>East Asia</h1>
+<h2>Week of March 16, 2026</h2>
+<p>For the week of March 16, 2026, developments in East Asia were marked by significant trade announcements and increasing tensions on the Korean Peninsula. US President Trump's decision to delay his summit with Chinese General Secretary Xi Jinping prioritizes the conflict in Iran, while US Treasury Secretary Scott Bessent met with PRC Vice Premier He Lifeng to discuss trade and investment issues. Meanwhile, North Korea resumed passenger train operations with China and announced plans to expand its economic development through rapprochement with the PRC. Additionally, South Korea's air defense gaps widened following the USFK's redeployment of THAAD and Patriot PAC-3 missiles to the Middle East. </p>
+<h2>Week of March 09, 2026</h2>
+<p>East Asia developments from March 9 to 16, 2026 saw the PRC continue to prioritize defense spending, proposing a 7% budget increase for 2026, amidst slowing economic growth. This reflects the regime's commitment to PLA modernization, with a focus on technological development, AI, and "intelligentization" in the military. In Taiwan, the PRC's government work report used more bellicose language, emphasizing the need to "crack down on Taiwan independence." Meanwhile, on the Korean Peninsula, satellite imagery suggests North Korea is expanding its nuclear facilities at Yongbyon, potentially to support the production of large nuclear warheads and tactical nuclear weapons. </p>
+<h2>Week of March 02, 2026</h2>
+<p>North Korea is likely to continue its military modernization efforts, expanding its nuclear triad and conventional forces, driven by its increasing confidence and strengthened relationships with Russia and China. Kim Jong Un's 9th Party Congress report emphasized the development of nuclear-capable ballistic missile submarines, surface vessels, and emerging military technologies, such as short-range ballistic missiles, to enhance the country's nuclear deterrent and conventional striking capabilities. The development of these capabilities is intended to hold the United States and South Korea at risk of a North Korean nuclear strike, while also countering South Korea's integrated air and missile defense network. The international community's responses to North Korea's military developments, including diplomatic outreach and economic pressure, will be crucial in shaping the country's future trajectory.</p>
+              </div>
+            </article>
+          
+        
+      </div>
+
+      <input type="radio" name="tabs" id="tabmonth">
+      <label for="tabmonth">Last 3 Months</label>
+      <div class="tab">
+        <h2>Monthly Summaries (Last 3 Months)</h2>
+        
+          
+            <article class="summary-topic">
+              <h3>Russia & Ukraine</h3>
+              <div class="summary-content">
+                <h1>Russia &amp; Ukraine</h1>
+<h2>March 2026</h2>
+<p>The provided text lacks a single-paragraph analytical summary. However, I can provide a summary of the key points and findings:</p>
+<p>Russia and Iran continue to engage in hostile behavior, with Russia shifting its long-range missile and drone strikes target set to include Ukrainian logistics and water infrastructure. Ukraine, meanwhile, continues to defend against these strikes and remains vigilant, with President Volodymyr Zelensky warning of a new wave of strikes against Ukrainian infrastructure. The international community remains divided, with European states cracking down on Russian shadow fleet vessels sailing in violation of international sanctions. Russia, however, continues to condemn US-Israeli strikes against Iran, but its boilerplate responses highlight the limits of its ability to support Iran, while its war effort in Ukraine constrains its ability to take decisive action.</p>
+<h2>February 2026</h2>
+<p>There is no text provided about Russia building up military infrastructure near the Finnish border, but I can analyze the given text (Russian drones struck a maternity hospital and a bus carrying miners on February 1, causing significant civilian casualties) and provide a summary. Here it is:</p>
+<p>The conflict in Ukraine is escalating, with Russian drones striking a maternity hospital in Zaporizhzhia City, causing significant civilian casualties. This attack, along with the strike on a bus carrying miners in Dnipropetrovsk Oblast, demonstrates Russia's continued priority on targeting civilians to demoralize the Ukrainian populace. Meanwhile, Russian Foreign Minister Sergei Lavrov is using issues unrelated to the war in Ukraine to push the Trump administration to give in to Russia's demands regarding Ukraine.</p>
+<h2>January 2026</h2>
+<p>Russia launched a strike campaign against Ukrainian critical infrastructure, citing the alleged Ukrainian drone strike on a hotel and cafe in occupied Khorly, Kherson Oblast, as justification. The strike killed at least 28 people and injured over 50, including Russian occupation officials. The Russian government has intensified its strike campaign, adapting its weapons to inflict maximum damage on civilian areas and population centers, which has increased damage and casualties.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>Middle East</h3>
+              <div class="summary-content">
+                <h1>Middle East</h1>
+<h2>March 2026</h2>
+<p><strong>Summary</strong></p>
+<p>The US-Israeli combined force continues to degrade Iran's retaliatory capabilities, achieving air superiority over Tehran and striking over 2,000 targets in Iran. The force has targeted Iranian naval assets to prevent retaliatory attacks against international shipping and US Navy vessels, and has also attacked internal security institutions responsible for maintaining stability and suppressing protests. Iran's response has been inconsistent, suggesting struggles to coordinate large-scale attacks. The regime has formed a leadership council to temporarily assume the supreme leader's responsibilities, and Iran remains committed to attacking maritime traffic around the Strait of Hormuz, imposing a cost on the US and its partners to compel a ceasefire.</p>
+<h2>February 2026</h2>
+<p>Iranian regime officials have been engaging in a concerted campaign to delay or prevent a potential US military attack, using diplomatic, informational, and military means. Iran has repeatedly insisted that it will not negotiate on its ballistic missile program or support for the Axis of Resistance, and has instead offered nuclear concessions, such as halting domestic uranium enrichment and transferring its highly enriched uranium stockpile. The regime has been warning of a potential regional conflict if the US attacks Iran, and has been engaging with other regional countries to build support for its position.</p>
+<h2>January 2026</h2>
+<p>Based on the provided text, the Syrian conflict and security situation continue to evolve, with ongoing tensions between government forces and opposition groups, as well as the presence of foreign actors such as Israel and Iran. The situation in Suwayda remains volatile, with reports of military buildups and covert activities. The conflict in Idlib and parts of Hama has seen increased violence and displacement, while in Daraa, government forces have made gains against opposition groups. Meanwhile, the Syrian military has announced its readiness to join the national guard, reflecting the ongoing efforts to reorganize and strengthen government forces. Despite these developments, the capture of the last ISIS stronghold and the announcement of a new presidential election date may indicate some stability in the broader political landscape.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>East Asia</h3>
+              <div class="summary-content">
+                <h1>East Asia</h1>
+<h2>March 2026</h2>
+<p>North Korea's Worker's Party of Korea (WPK) General Secretary Kim Jong Un expressed willingness to negotiate with the United States if it accepts Pyongyang's nuclear status, indicating that the North may be open to dialogue if its nuclear deterrent is recognized. This stance is likely driven by North Korea's strengthened relations with Russia and the People's Republic of China (PRC) and increased confidence in Pyongyang due to stabilizing economic conditions.</p>
+<h2>February 2026</h2>
+<p>North Korea's recent missile launch, which showcased its advanced multiple-launch rocket system, may be a reaction to US-South Korea deterrence coordination and a demonstration of Pyongyang's self-reliance ahead of the Workers' Party of Korea Congress. The launch could also signal North Korea's increased efficiency and sophistication, which may benefit Russian efforts in Ukraine. Meanwhile, South Korea's Ministry of Unification is seeking to expand its influence over the country's North Korea policy, potentially violating the Korean War Armistice Agreement, which has raised concerns among the United Nations Command and other stakeholders.</p>
+<h2>January 2026</h2>
+<p>North Korea's recent ballistic missile launch and other military developments may be a response to recent events, including the US capture of Venezuelan President Nicolas Maduro, and the PRC-South Korea summit. North Korea may be using this launch to justify its self-defense and justify strengthening its nuclear deterrence and military capabilities. Meanwhile, the PRC is using the US operation to portray itself as a leader of the "Global South" and denigrate US foreign policy, while attempting to maintain its economic ties with Venezuela.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>US & Global</h3>
+              <div class="summary-content">
+                <h1>US &amp; Global</h1>
+<h2>January 2026</h2>
+<p>According to the sole available source , the most significant development for January 2026 is the US airstrikes in Venezuela on January 3, 2026, marking a significant escalation in tensions between the two nations.</p>
+              </div>
+            </article>
+          
+            <article class="summary-topic">
+              <h3>Other</h3>
+              <div class="summary-content">
+                <h1>Other</h1>
+<h2>January 2026</h2>
+<p>Xi Jinping has expanded his military purges, stripping the Central Military Commission (CMC) of senior leadership, transforming it into an extension of his will. The latest purge targets Zhang Youxia and Liu Zhenli, two seniors most officers in the People's Liberation Army (PLA), suspecting them of serious violations of discipline and law. </p>
+              </div>
+            </article>
+          
+        
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>This report is automatically generated using data from the Institute for the Study of War.</p>
+    <p>Source: <a href="https://understandingwar.org/research" target="_blank">understandingwar.org/research</a></p>
+  </footer>
+</body>
+</html>
